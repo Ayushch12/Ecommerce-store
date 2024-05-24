@@ -14,6 +14,11 @@
       "id": "8d9b",
       "username": "Ayush",
       "password": "12345678"
+    },
+    {
+      "id": "680c",
+      "email": "ayush12@gmail.com",
+      "password": "12345678"
     }
   ],
   "products": [

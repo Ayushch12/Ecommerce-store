@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { login as loginService, setAuthToken } from '../services/auth';
 
 const LoginPage: React.FC = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
@@ -13,43 +13,122 @@ const LoginPage: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const { token, user } = await loginService(username, password);
+      const { token, user } = await loginService(email, password);
       setAuthToken(token);
       login(user);
       navigate('/');
     } catch (err) {
-      setError('Invalid username or password');
+      setError('Invalid email or password');
     }
   };
 
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-2xl font-bold mb-4">Login</h1>
-      {error && <p className="text-red-600">{error}</p>}
-      <form onSubmit={handleLogin}>
-        <div className="mb-4">
-          <label className="block text-gray-700">Username</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md"
-            required
-          />
+    <section className="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center justify-center">
+      <div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-12 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div className="place-self-center mr-auto mb-10 lg:col-span-7 xl:col-span-8 xl:mb-0">
+          <h1 className="mb-4 max-w-2xl text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+          Welcome to Our E-commerce Store - Where Quality Meets Convenience
+
+
+          </h1>
+          <p className="mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+          Dans notre magasin de commerce électronique, nous vous proposons une sélection de produits de qualité supérieure, associée à un service clientèle hors pair pour vous garantir une expérience d'achat sans faille.
+.
+          </p>
+          <ul className="hidden justify-between pt-12 mx-auto mt-14 border-t border-gray-300 xl:flex dark:border-gray-700 dark:text-white">
+            <li className="flex">
+              <span className="text-4xl font-extrabold lg:text-5xl">42k</span>
+              <div className="block pl-4 text-xl text-gray-500 dark:text-gray-400">
+                <div>Our Active</div>
+                <div>Users</div>
+              </div>
+            </li>
+            <li className="flex">
+              <span className="text-4xl font-extrabold lg:text-5xl">3k</span>
+              <div className="block pl-4 text-xl text-gray-500 dark:text-gray-400">
+                <div>Professional</div>
+                <div>Creators</div>
+              </div>
+            </li>
+            <li className="flex">
+              <span className="text-4xl font-extrabold lg:text-5xl">560k</span>
+              <div className="block pl-4 text-xl text-gray-500 dark:text-gray-400">
+                <div>Weekly</div>
+                <div>Downloads</div>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700">Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md"
-            required
-          />
+        <div className="justify-center p-4 max-w-screen-sm bg-white rounded-lg border border-gray-200 shadow lg:mt-0 lg:col-span-5 xl:col-span-4 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <form className="space-y-6" onSubmit={handleLogin}>
+            <h2 className="text-xl font-medium text-gray-900 dark:text-white">Sign in to your account</h2>
+            {error && <p className="text-red-600">{error}</p>}
+            <div>
+              <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                Your email
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                placeholder="name@flowbite.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                Your password
+              </label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="••••••••"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="flex items-start">
+              <div className="flex items-start">
+                <div className="flex items-center h-5">
+                  <input
+                    id="remember"
+                    aria-describedby="remember"
+                    type="checkbox"
+                    className="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                  />
+                </div>
+                <div className="ml-3 text-sm">
+                  <label htmlFor="remember" className="font-medium text-gray-900 dark:text-gray-300">
+                    Remember me
+                  </label>
+                </div>
+              </div>
+              <a href="#" className="ml-auto text-sm text-primary-700 hover:underline dark:text-primary-500">
+                Lost Password?
+              </a>
+            </div>
+            <button
+              type="submit"
+              className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-500 dark:focus:ring-primary-700"
+            >
+              Sign in to your account
+            </button>
+            <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
+              Not registered?{' '}
+              <a href="/register" className="text-primary-700 hover:underline dark:text-primary-500">
+                Create account
+              </a>
+            </div>
+          </form>
         </div>
-        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-md">Login</button>
-      </form>
-    </div>
+      </div>
+    </section>
   );
 };
 

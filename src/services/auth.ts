@@ -4,26 +4,26 @@ interface LoginResponse {
   token: string;
   user: {
     id: number;
-    username: string;
+    email: string;
   };
 }
 
-export const login = async (username: string, password: string): Promise<LoginResponse> => {
+export const login = async (email: string, password: string): Promise<LoginResponse> => {
   const response = await axios.get('http://localhost:5001/users', {
-    params: { username, password }
+    params: { email, password }
   });
 
-  const user = response.data.find((u: { username: string; password: string }) => u.username === username && u.password === password);
+  const user = response.data.find((u: { email: string; password: string }) => u.email === email && u.password === password);
 
   if (user) {
-    return { token: 'mock-token', user: { id: user.id, username: user.username } };
+    return { token: 'mock-token', user: { id: user.id, email: user.email } };
   } else {
     throw new Error('Invalid credentials');
   }
 };
 
-export const register = async (username: string, password: string) => {
-  const response = await axios.post('http://localhost:5001/users', { username, password });
+export const register = async (email: string, password: string) => {
+  const response = await axios.post('http://localhost:5001/users', { email, password });
   return response.data;
 };
 
