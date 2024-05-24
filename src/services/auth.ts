@@ -9,7 +9,7 @@ interface LoginResponse {
 }
 
 export const login = async (username: string, password: string): Promise<LoginResponse> => {
-  const response = await axios.get('http://localhost:5000/users', {
+  const response = await axios.get('http://localhost:5001/users', {
     params: { username, password }
   });
 
@@ -23,7 +23,7 @@ export const login = async (username: string, password: string): Promise<LoginRe
 };
 
 export const register = async (username: string, password: string) => {
-  const response = await axios.post('http://localhost:5000/users', { username, password });
+  const response = await axios.post('http://localhost:5001/users', { username, password });
   return response.data;
 };
 
