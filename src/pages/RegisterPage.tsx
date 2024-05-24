@@ -1,7 +1,7 @@
-// RegisterPage.tsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { register } from '../services/auth';
+import { useAuth } from '../context/AuthContext';
+import { register as registerService } from '../services/auth';
 
 const RegisterPage: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -9,6 +9,7 @@ const RegisterPage: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,7 +18,8 @@ const RegisterPage: React.FC = () => {
       return;
     }
     try {
-      await register(username, password);
+      const user = await registerService(username, password);
+      login(user);
       navigate('/login');
     } catch (err) {
       setError('Failed to register');

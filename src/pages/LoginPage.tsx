@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login, setAuthToken } from '../services/auth';
+import { useAuth } from '../context/AuthContext';
+import { login as loginService, setAuthToken } from '../services/auth';
 
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const { token, user } = await login(username, password);
+      const { token, user } = await loginService(username, password);
       setAuthToken(token);
-      localStorage.setItem('user', JSON.stringify(user));
+      login(user);
       navigate('/');
     } catch (err) {
       setError('Invalid username or password');
