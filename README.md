@@ -43,11 +43,12 @@ Bien sûr, voici ce que nous avons appliqué aux sites :
 
 ### Running the Project
 
-To run the frontend and Backend:
-
-```bash
+### To run the frontend : 
 npm start 
-And
+http://localhost:3000/register
+
+
+### To run the Backend : 
 json-server --watch db.json --port 5001
 
 
