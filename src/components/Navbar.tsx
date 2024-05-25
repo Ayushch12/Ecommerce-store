@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
             </button>
           )}
           {isCartOpen && user && !isCheckoutPage && (
-            <div className="fixed right-0 mt-12 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+            <div className="fixed right-0 mt-72 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
               <div className="p-4 max-h-64 overflow-y-auto">
                 {cart.length === 0 ? (
                   <p className="text-gray-500 dark:text-gray-400">Your cart is empty.</p>
