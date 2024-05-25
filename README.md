@@ -1,23 +1,22 @@
-
-# E-commerce Store
-Welcome to our E-commerce Store! Here, you can order groceries online and have them delivered within 15 minutes. This service makes it easier for you to manage your time and stay productive throughout your day. Enjoy the convenience of quick and efficient grocery shopping with us.
+# Magasin de commerce électronique
+Bienvenue dans notre magasin de commerce électronique ! Ici, vous pouvez commander des produits alimentaires en ligne et vous les faire livrer dans les 15 minutes. Ce service vous permet de mieux gérer votre temps et de rester productif tout au long de la journée. Avec nous, vous pouvez faire vos courses rapidement et efficacement.
 
 
 ## Documentation
 
-Sure, here's We have applied this in the sites:
+Bien sûr, voici ce que nous avons appliqué aux sites :
 
-- TypeScript best practices: Types and annotations, Classes and Interfaces.
-- Use of a component library and design system: Flowbite, Tailwind CSS.
-- REST API integration.
-- Navigation and routing.
-- Authentication using JWT.
-- Forms and validation.
-- CRUD operations: Create, Read, Update, Delete.
-- Pagination of results.
-- Search functionality.
-- Error handling.
-- Version control with Git.
+- Les meilleures pratiques TypeScript : Types et annotations, Classes et Interfaces.
+- Utilisation d'une bibliothèque de composants et d'un système de conception : Flowbite, Tailwind CSS.
+- Intégration de l'API REST.
+- Navigation et routage.
+- Authentification à l'aide de JWT.
+- Formulaires et validation.
+- Opérations CRUD : créer, lire, mettre à jour, supprimer.
+- Pagination des résultats.
+- Fonctionnalité de recherche.
+- Gestion des erreurs.
+- Contrôle de version avec Git.
 
 
 
