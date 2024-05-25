@@ -30,6 +30,19 @@ Bien sûr, voici ce que nous avons appliqué aux sites :
 - Gestion des erreurs.
 - Contrôle de version avec Git.
 
+- 
+## Frontend and Backend 
+
+### Running the Project
+
+### To run the frontend : 
+npm start :
+http://localhost:3000/register
+
+
+### To run the Backend : 
+json-server --watch db.json --port 5001
+
 
 <img width="1403" alt="Screenshot 2024-05-25 at 23 39 03" src="https://github.com/Ayushch12/Ecommerce-store/assets/96380226/2d7610a2-eea5-41b6-bd4f-60fb8e3f3111">
 
@@ -39,16 +52,5 @@ Bien sûr, voici ce que nous avons appliqué aux sites :
 
 
 
-## Frontend and Backend 
-
-### Running the Project
-
-### To run the frontend : 
-npm start 
-http://localhost:3000/register
-
-
-### To run the Backend : 
-json-server --watch db.json --port 5001
 
 
