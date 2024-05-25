@@ -4,3 +4,13 @@
 
 /* Add any custom styles here */
 @import "flowbite";
+
+
+@keyframes move {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(100% - 4rem)); } /* Adjust the width accordingly */
+  }
+
+  .animate-move {
+    animation: move 15s linear infinite; /* 15s is the same as the countdown timer */
+  }
