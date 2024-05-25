@@ -29,6 +29,18 @@ const HomePage: React.FC = () => {
       { id: 8, name: 'Bonne Maman', price: 4.7, image: product8, description: 'Description for Bonne Maman' },
       { id: 9, name: 'chocolat bonbon', price: 6.9, image: product9, description: 'Description for chocolat' },
       { id: 10, name: 'Cookies chocolat', price: 5.8, image: product10, description: 'Description for Cookies chocolat' },
+      { id: 11, name: 'Flocons davoine', price: 5.9, image: product5, description: 'Description for Flocons davoine' },
+      { id: 12, name: 'Flocons davoine', price: 25, image: product6, description: 'Description for Flocons davoine' },
+      { id: 13, name: 'Ananas Extra', price: 6, image: product7, description: 'Description for Ananas Extra' },
+      { id: 14, name: 'Bonne Maman', price: 4.7, image: product8, description: 'Description for Bonne Maman' },
+      { id: 15, name: 'chocolat bonbon', price: 6.9, image: product9, description: 'Description for chocolat' },
+      { id: 16, name: 'Cookies chocolat', price: 5.8, image: product10, description: 'Description for Cookies chocolat' },
+      { id: 17, name: 'Chipster', price: 3.5, image: product1, description: 'Description for Chipster Maman' },
+      { id: 18, name: 'Croustilles emmental', price: 2.8, image: product2, description: 'Description for Croustilles ' },
+      { id: 19, name: 'Bière blonde 5,5%', price: 5, image: product3, description: 'Description for Bière blonde 5,5%' },
+      { id: 20, name: 'Crème Entière', price: 1.56, image: product4, description: 'Description for Crème Entière' },
+      { id: 21, name: 'Flocons davoine', price: 5.9, image: product5, description: 'Description for Flocons davoine' },
+      { id: 22, name: 'Flocons davoine', price: 25, image: product6, description: 'Description for Flocons davoine' }
     ];
     setProducts(sampleProducts);
   }, []);
