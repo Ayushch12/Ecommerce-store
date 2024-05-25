@@ -1,50 +1,14 @@
 {
   "users": [
     {
-      "id": "1",
-      "username": "testuser",
-      "password": "password123"
+      "id": "b60e",
+      "email": "a@agmail.com",
+      "password": "123456789"
     },
     {
-      "id": "70b4",
-      "username": "Ayush",
-      "password": "12345678"
-    },
-    {
-      "id": "8d9b",
-      "username": "Ayush",
-      "password": "12345678"
-    },
-    {
-      "id": "680c",
+      "id": "9917",
       "email": "ayush12@gmail.com",
       "password": "12345678"
-    },
-    {
-      "id": "9f8d",
-      "email": "ayush12@gmail.com",
-      "password": "12345678"
-    },
-    {
-      "id": "6911",
-      "email": "raja12@gmail.com",
-      "password": "12345678"
-    }
-  ],
-  "products": [
-    {
-      "id": "1",
-      "name": "Product 1",
-      "description": "Description for product 1",
-      "price": 15,
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": "2",
-      "name": "Product 2",
-      "description": "Description for product 2",
-      "price": 20,
-      "image": "https://via.placeholder.com/150"
     }
   ]
 }

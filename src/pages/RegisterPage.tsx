@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -18,8 +19,8 @@ const RegisterPage: React.FC = () => {
       return;
     }
     try {
-      const user = await registerService(email, password);
-      login(user);
+      const { id, email: userEmail, token } = await registerService(email, password);
+      login({ id, email: userEmail }, token); // Pass user and token as separate arguments
       navigate('/');
     } catch (err) {
       setError('Failed to register');
@@ -27,40 +28,16 @@ const RegisterPage: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900">
+    <section className="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center justify-center">
       <div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-12 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="place-self-center mr-auto mb-10 lg:col-span-7 xl:col-span-8 xl:mb-0">
           <h1 className="mb-4 max-w-2xl text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-          Shop Now and Experience the Best in Online Shopping
-
+            Shop Now and Experience the Best in Online Shopping
           </h1>
           <p className="mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-          Découvrez une large gamme de produits, des appareils électroniques les plus récents aux vêtements à la mode,
-          tous soigneusement sélectionnés pour répondre à vos besoins et à vos préférences. Notre plateforme est conçue pour vous offrir une interface intuitive et conviviale, vous permettant de trouver facilement ce que vous cherchez.
+            Découvrez une large gamme de produits, des appareils électroniques les plus récents aux vêtements à la mode,
+            tous soigneusement sélectionnés pour répondre à vos besoins et à vos préférences. Notre plateforme est conçue pour vous offrir une interface intuitive et conviviale, vous permettant de trouver facilement ce que vous cherchez.
           </p>
-          <ul className="hidden justify-between pt-12 mx-auto mt-14 border-t border-gray-300 xl:flex dark:border-gray-700 dark:text-white">
-            <li className="flex">
-              <span className="text-4xl font-extrabold lg:text-5xl">42k</span>
-              <div className="block pl-4 text-xl text-gray-500 dark:text-gray-400">
-                <div>Our Active</div>
-                <div>Users</div>
-              </div>
-            </li>
-            <li className="flex">
-              <span className="text-4xl font-extrabold lg:text-5xl">3k</span>
-              <div className="block pl-4 text-xl text-gray-500 dark:text-gray-400">
-                <div>Professional</div>
-                <div>Creators</div>
-              </div>
-            </li>
-            <li className="flex">
-              <span className="text-4xl font-extrabold lg:text-5xl">560k</span>
-              <div className="block pl-4 text-xl text-gray-500 dark:text-gray-400">
-                <div>Weekly</div>
-                <div>Downloads</div>
-              </div>
-            </li>
-          </ul>
         </div>
         <div className="justify-center p-4 max-w-screen-sm bg-white rounded-lg border border-gray-200 shadow lg:mt-0 lg:col-span-5 xl:col-span-4 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
           <form className="space-y-6" onSubmit={handleRegister}>
