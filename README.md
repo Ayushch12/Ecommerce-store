@@ -1,12 +1,5 @@
 # Project  - E-Commerce Store
 
-<img width="1403" alt="Screenshot 2024-05-25 at 23 38 25" src="https://github.com/Ayushch12/Ecommerce-store/assets/96380226/1468304a-affe-4ef7-b85d-fa928a7eff59">
-
-<img width="1403" alt="Screenshot 2024-05-25 at 23 38 41" src="https://github.com/Ayushch12/Ecommerce-store/assets/96380226/8ad42197-f119-4f0c-a4db-f7e1cf5c521f">
-
-<img width="1403" alt="Screenshot 2024-05-25 at 23 39 03" src="https://github.com/Ayushch12/Ecommerce-store/assets/96380226/2d7610a2-eea5-41b6-bd4f-60fb8e3f3111">
-
-
 ## Clone
 
 **SSH clone URL:** `git@github.com:Ayushch12/Ecommerce-store.git`
@@ -38,7 +31,11 @@ Bien sûr, voici ce que nous avons appliqué aux sites :
 - Contrôle de version avec Git.
 
 
+<img width="1403" alt="Screenshot 2024-05-25 at 23 39 03" src="https://github.com/Ayushch12/Ecommerce-store/assets/96380226/2d7610a2-eea5-41b6-bd4f-60fb8e3f3111">
 
+<img width="1403" alt="Screenshot 2024-05-25 at 23 38 25" src="https://github.com/Ayushch12/Ecommerce-store/assets/96380226/1468304a-affe-4ef7-b85d-fa928a7eff59">
+
+<img width="1403" alt="Screenshot 2024-05-25 at 23 38 41" src="https://github.com/Ayushch12/Ecommerce-store/assets/96380226/8ad42197-f119-4f0c-a4db-f7e1cf5c521f">
 
 ## Frontend and Backend 
 
