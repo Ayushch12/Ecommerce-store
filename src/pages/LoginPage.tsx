@@ -27,7 +27,7 @@ const LoginPage: React.FC = () => {
       <div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-24 xl:gap-30 lg:py-16 lg:grid-cols-12">
         <div className="lg:col-span-6 xl:col-span-7">
           <h1 className="mb-4 max-w-2xl text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-            Welcome to Our E-commerce Store - Where Quality Meets Convenience
+            Welcome to Our E-commerce Store
           </h1>
           <p className="mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
             Dans notre magasin de commerce électronique, nous vous proposons une sélection de produits de qualité supérieure, associée à un service clientèle hors pair pour vous garantir une expérience d'achat sans faille.
@@ -43,8 +43,8 @@ const LoginPage: React.FC = () => {
             <li className="flex">
               <span className="text-4xl font-extrabold lg:text-5xl">3k</span>
               <div className="block pl-4 text-xl text-gray-500 dark:text-gray-400">
-                <div>Professional</div>
-                <div>Creators</div>
+                <div>Store</div>
+                <div>Reviews</div>
               </div>
             </li>
             <li className="flex">
@@ -58,7 +58,7 @@ const LoginPage: React.FC = () => {
         </div>
         <div className="justify-center p-4 max-w-screen-md bg-white rounded-lg border border-gray-200 shadow lg:mt-0 lg:col-span-6 xl:col-span-5 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
           <form className="space-y-6" onSubmit={handleLogin}>
-            <h2 className="text-xl font-medium text-gray-900 dark:text-white">Sign in to your account</h2>
+            <h2 className="text-xl font-medium text-gray-900 dark:text-white">Connectez-vous à votre compte</h2>
             {error && <p className="text-red-600">{error}</p>}
             <div>
               <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -94,7 +94,7 @@ const LoginPage: React.FC = () => {
               type="submit"
               className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-500 dark:focus:ring-primary-700"
             >
-              Sign in to your account
+              Login
             </button>
             <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
               Not registered?{' '}
