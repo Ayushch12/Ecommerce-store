@@ -1,3 +1,16 @@
+# Project  - E-Commerce Store
+
+
+## Clone
+
+**SSH clone URL:** `git@github.com:Ayushch12/Ecommerce-store.git`
+
+**HTTPS clone URL:** `https://github.com/Ayushch12/Ecommerce-store.git`
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing
+purposes.
+
+
 # Magasin de commerce électronique
 Bienvenue dans notre magasin de commerce électronique ! Ici, vous pouvez commander des produits alimentaires en ligne et vous les faire livrer dans les 15 minutes. Ce service vous permet de mieux gérer votre temps et de rester productif tout au long de la journée. Avec nous, vous pouvez faire vos courses rapidement et efficacement.
 
