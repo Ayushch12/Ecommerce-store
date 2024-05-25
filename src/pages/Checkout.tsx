@@ -1,11 +1,15 @@
+
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import googleMapPin from '../assets/google_map_pin.png'; // Add this image to your assets folder
 import image1 from '../assets/image1.jpeg'; // Adjust the path as necessary
+import { useAuth } from '../context/AuthContext';
 
 const Checkout: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState(15 * 60); // 15 minutes in seconds
   const navigate = useNavigate();
+  const { user } = useAuth(); // Get user from AuthContext
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -32,6 +36,7 @@ const Checkout: React.FC = () => {
       <div className="bg-white p-4 rounded-lg border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 text-center">
         <h1 className="text-2xl font-bold mb-4">Successfully Ordered! It will be delivered in 15 minutes to your address.</h1>
         <p className="text-lg">Time remaining: {formatTime(timeLeft)}</p>
+        {user && <p className="text-lg mt-4">Delivery Address: {user.address}</p>}
       </div>
 
       <div className="relative mt-8 h-64">
@@ -51,4 +56,3 @@ const Checkout: React.FC = () => {
 };
 
 export default Checkout;
-

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -8,6 +7,7 @@ const RegisterPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [address, setAddress] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -20,7 +20,7 @@ const RegisterPage: React.FC = () => {
     }
     try {
       const { id, email: userEmail, token } = await registerService(email, password);
-      login({ id, email: userEmail }, token); // Pass user and token as separate arguments
+      login({ id, email: userEmail, address }, token); // Pass user and token as separate arguments
       navigate('/');
     } catch (err) {
       setError('Failed to register');
@@ -29,8 +29,8 @@ const RegisterPage: React.FC = () => {
 
   return (
     <section className="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center justify-center">
-      <div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-12 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        <div className="place-self-center mr-auto mb-10 lg:col-span-7 xl:col-span-8 xl:mb-0">
+      <div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-24 xl:gap-30 lg:py-16 lg:grid-cols-12">
+        <div className="lg:col-span-6 xl:col-span-7">
           <h1 className="mb-4 max-w-2xl text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
             Shop Now and Experience the Best in Online Shopping
           </h1>
@@ -39,7 +39,7 @@ const RegisterPage: React.FC = () => {
             tous soigneusement sélectionnés pour répondre à vos besoins et à vos préférences. Notre plateforme est conçue pour vous offrir une interface intuitive et conviviale, vous permettant de trouver facilement ce que vous cherchez.
           </p>
         </div>
-        <div className="justify-center p-4 max-w-screen-sm bg-white rounded-lg border border-gray-200 shadow lg:mt-0 lg:col-span-5 xl:col-span-4 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div className="justify-center p-4 max-w-screen-md bg-white rounded-lg border border-gray-200 shadow lg:mt-0 lg:col-span-6 xl:col-span-5 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
           <form className="space-y-6" onSubmit={handleRegister}>
             <h2 className="text-xl font-medium text-gray-900 dark:text-white">Create an account</h2>
             {error && <p className="text-red-600">{error}</p>}
@@ -85,6 +85,21 @@ const RegisterPage: React.FC = () => {
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="address" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                Your address
+              </label>
+              <input
+                type="text"
+                name="address"
+                id="address"
+                placeholder="123 Main St"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
                 required
               />
             </div>

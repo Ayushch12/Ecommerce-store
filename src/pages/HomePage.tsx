@@ -50,8 +50,10 @@ const HomePage: React.FC = () => {
       <h1 className="text-2xl font-bold mb-4">Products</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {products.map((product) => (
-          <div key={product.id} className="border border-gray-200 p-2 rounded-lg">
-            <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-2 rounded-lg" />
+          <div key={product.id} className="border border-gray-200 p-4 rounded-lg">
+            <div className="flex justify-center items-center h-32 mb-2">
+              <img src={product.image} alt={product.name} className="max-h-full object-contain" />
+            </div>
             <h2 className="text-lg font-bold mb-1">{product.name}</h2>
             <p className="text-gray-700 mb-2">${product.price}</p>
             <p className="text-gray-500 mb-2 text-sm">{product.description}</p>
@@ -59,6 +61,7 @@ const HomePage: React.FC = () => {
               onClick={() => addToCart(product)}
               className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-xs px-3 py-1.5 dark:bg-primary-600 dark:hover:bg-primary-500 dark:focus:ring-primary-700"
             >
+
               Add to Cart
             </button>
           </div>
